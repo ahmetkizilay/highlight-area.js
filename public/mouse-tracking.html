@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>highlight-area</title>
+        <link rel="stylesheet" type="text/css" href="css/highlight-area.css">
+        <style>
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro);
+
+* {
+    font-family: 'Source Sans Pro', sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+h1 {
+    font-size: 72px;
+    line-height: 80px;
+}
+
+h2 {
+    line-height: 72px;
+}
+
+#header {
+    text-align: center;
+    color: #222;
+}
+
+#main {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    text-align: center;
+    padding-top: 20px;
+}
+
+#tracker {
+    background-color: #fff;
+    margin-left: 10px;
+    margin-top: 10px;
+    padding-left: 5px;
+    width: 200px;
+    border: 1px solid #888;
+    border-radius: 2px;
+    z-index: 200;
+}
+
+.action {
+    line-height: 25px;
+    margin-top: 10px;
+    margin-left: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    font-size: 20px;
+    position: relative;
+}
+        </style>
+    </head>
+    <body>
+        <div id="header">
+            <h1>highlight-area.js</h1>
+        </div>
+        <div id="content">
+            <div id="main">
+                <p>This is a javascript library to hightlight a region on a div</p>
+                <button id="btn0">BUTTON</button>
+                <button id="btn1">BUTTON</button>
+                <button id="btn2">BUTTON</button>
+                <button id="btn3">BUTTON</button>
+                <button id="btn4">BUTTON</button>
+                <br /><br /><br /><br />
+                <button id="btn5" style="line-height: 30px; width: 120px">BUTTON</button>
+            </div>
+        </div>
+        <button id="btnStart" class="action">Start Tracking</button>
+        <button id="btnStop" class="action">Stop Tracking</button>
+
+        <script type="text/javascript" src="js/highlight-area.js"></script>
+        <script type="text/javascript">
+var btnStart = document.getElementById('btnStart');
+var btnStop = document.getElementById('btnStop');
+var wall = createWallFor("#main");
+
+btnStart.addEventListener('click', function() {
+    wall.trackMouse(40);
+});
+
+btnStop.addEventListener('click', function() {
+    wall.stopMouseTracking();
+});
+
+        </script
+    </body>
+</html>

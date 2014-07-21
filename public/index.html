@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>highlight-area</title>
+        <link rel="stylesheet" type="text/css" href="css/highlight-area.css">
+        <style>
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro);
+
+* {
+    font-family: 'Source Sans Pro', sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+h1 {
+    font-size: 72px;
+    line-height: 80px;
+}
+
+h2 {
+    line-height: 72px;
+}
+
+#header {
+    text-align: center;
+    color: #222;
+}
+
+#main {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    text-align: center;
+    padding-top: 20px;
+}
+
+#tracker {
+    background-color: #fff;
+    margin-left: 10px;
+    margin-top: 10px;
+    padding-left: 5px;
+    width: 200px;
+    border: 1px solid #888;
+    border-radius: 2px;
+    z-index: 200;
+}
+
+.action {
+    line-height: 25px;
+    margin-top: 10px;
+    margin-left: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    font-size: 20px;
+    position: relative;
+}
+        </style>
+    </head>
+    <body>
+        <div id="header">
+            <h1>highlight-area.js</h1>
+        </div>
+        <div id="content">
+            <div id="main">
+                <p>This is a javascript library to hightlight a region on a div</p>
+                <button id="el0">BUTTON</button>
+                <button id="el1">BUTTON</button>
+                <button id="el2">BUTTON</button>
+                <button id="el3">BUTTON</button>
+                <button id="el4">BUTTON</button>
+                <br /><br /><br /><br />
+                <div style="padding-top: 20px;">
+                    <button id="el5" style="line-height: 30px; width: 120px">BUTTON</button>
+                    <br />
+                    <img id="el6" src="img/test.png" width="72" height="72" style="margin-top: 48px"/>
+                </div>
+
+            </div>
+        </div>
+        <button id="btnPrev" class="action">Prev</button>
+        <button id="btnNext" class="action">Next</button>
+
+        <script type="text/javascript" src="js/highlight-area.js"></script>
+        <script type="text/javascript">
+var btnPrev = document.getElementById('btnPrev');
+var btnNext = document.getElementById('btnNext');
+var wall = createWallFor("#main");
+var numElements = 7, currentElement = 0;
+
+wall.highlight("#el0");
+
+btnPrev.addEventListener('click', function() {
+    currentElement = (--currentElement + numElements) % numElements;
+    wall.highlight("#el" + currentElement);
+});
+
+btnNext.addEventListener('click', function() {
+    currentElement = (++currentElement % numElements);
+    wall.highlightWithTransition("#el" + currentElement);
+});
+
+        </script
+    </body>
+</html>
