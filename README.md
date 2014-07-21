@@ -35,6 +35,6 @@ btnNext.addEventListener('click', function() {
 ```
 
 #### See also
-Live examples are available [here](https://artsince.github.io/highlight-area/index.html) and [here](httos://artsince.github.io/highlight-area/highlight-tracking.html).
+Live examples are available [here](https://artsince.github.io/highlight-area/index.html) and [here](https://artsince.github.io/highlight-area/highlight-tracking.html).
 
 Also checkout my other [repository](https://github.com/artsince/select-area.js) for selecting regions with the mouse.
