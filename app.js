@@ -1,15 +1,9 @@
-(function () {
-    var application_root = __dirname,
-        express = require('express'),
-        path = require('path'),
-        app = express();
+const express = require('express');
+const path = require('path');
 
-    app.configure(function() {
-        app.use(express.bodyParser());
-        app.use(express.methodOverride());
-        app.use(app.router);
-        app.use(express.static(path.join(application_root, "public")));
-    });
+const application_root = __dirname;
+const app = express();
 
-    app.listen(process.env.PORT || 2424);
-}).call(this);
+app.use(express.static(path.join(application_root, "public")))
+
+app.listen(process.env.PORT || 2424);
